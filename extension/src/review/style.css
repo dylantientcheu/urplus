@@ -1,9 +1,3 @@
-div.comment-editor p.caption,
-div.critique-container p.caption,
-div#generalComment p.caption {
-  display: none;
-}
-
 h1.h-slim {
   display: inline;
   margin-right: 10px !important;
