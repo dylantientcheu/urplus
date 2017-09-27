@@ -127,7 +127,7 @@
       <h4><strong>Addon Interface</strong></h4>
       <p>
         When performing reviews, each area for editing remarks will have an addon for the
-        Remarks Storage app. This addon comes in two forms&mdash;remark storage and
+        Remark Storage app. This addon comes in two forms&mdash;remark storage and
         remark retrieval&mdash;with the visibility of each depending on the context.
       </p>
       <p>
@@ -329,10 +329,10 @@
         is the same, but a phrase or variable will be specific to each submission.
       </p>
       <p>
-        <strong>The purpose of the Remarks Storage app is to <em>optimize</em>, not <em>generalize</em>.</strong>
+        <strong>The purpose of the Remark Storage app is to <em>optimize</em>, not <em>generalize</em>.</strong>
       </p>
       <p>
-        Remarks Storage identifies <code>&lt;#&gt;</code> as a
+        Remark Storage identifies <code>&lt;#&gt;</code> as a
         placeholder phrase that can be used to mark an area that needs to be
         tailored to each submission. For instance, let's say that we have a comment
         that describes how to use a <code>forEach</code> loop in a certain context,
@@ -371,7 +371,7 @@
       <h2 id="authentication">Authentication</h2>
       <hr>
       <p>
-        The Remarks Storage app is authenticated with your Udacity
+        The Remark Storage app is authenticated with your Udacity
         <a href="https://jwt.io/" target="_blank">JSON Web Token</a>.
         This is how your personal remarks that you create and store are
         separated from remarks that another Udacity reviewer creates &ndash;
