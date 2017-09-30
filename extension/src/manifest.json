@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Udacity Review Plus",
   "description": "A chrome extension to enhance the Udacity reviewer experience.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Michael Hays",
 
   "browser_action": {
