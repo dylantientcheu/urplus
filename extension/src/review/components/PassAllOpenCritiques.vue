@@ -13,7 +13,9 @@ export default {
     passAllOpenCritiques() {
       $('input:radio[value="passed"]').click();
       setTimeout(() => {
-        $('button:contains("Save & Preview")').click();
+        $('.critique-container').each(function () {  // eslint-disable-line
+          $(this).find('button:first').click();
+        });
         $(this.$el)
           .empty()
           .append($('<span class="fa fa-check"></span>'));
