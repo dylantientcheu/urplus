@@ -348,20 +348,20 @@
         instead of instantly submitting that comment, the first instance of
         <code>&lt;#&gt;</code> will be highlighted, ready to be immediately
         replaced with the submission-specific phrase. Then, pressing
-        <code>ctrl+Enter</code> highlights the next instance of <code>&lt;#&gt;</code>
+        <code>Tab</code> highlights the next instance of <code>&lt;#&gt;</code>
       </p>
       <p class="text-secondary">
-        <strong>Note</strong>: <code>ctrl+Enter</code> always highlights the <i>first</i>
+        <strong>Note</strong>: <code>Tab</code> always highlights the <i>first</i>
         instance of <code>&lt;#&gt;</code> in a remark. Once you have replaced the first
         <code>&lt;#&gt;</code>, the next instance just becomes the first.
       </p>
       <p>
         If there are no instances of <code>&lt;#&gt;</code> remaining,
-        <code>ctrl+Enter</code> submits the remark to the review.
+        <code>Tab</code> submits the remark to the review.
       </p>
       <p>
         So, after replacing all instances of <code>&lt;#&gt;</code>, we press
-         <code>ctrl+Enter</code> to submit the comment:
+         <code>Tab</code> to submit the comment:
       </p>
       <pre>
         work.jobs.forEach(function(job) {
