@@ -188,6 +188,7 @@ export default {
     placeholderListener() {
       this.$container.on('keydown', 'textarea', (e) => {
         if (e.key === 'Tab') {
+          e.preventDefault();
           this.selectPlaceholder();
         }
       });
