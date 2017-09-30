@@ -259,7 +259,7 @@ export default {
     selectPlaceholder() {
       const textarea = this.$container.find('textarea')[0];
       if (!$(textarea).val().includes('<#>')) {
-        this.$container.find('button:contains("Save & Preview")').click();
+        this.$container.find('div.comment-editor').find('button:first').click();
       }
       const placeholderIndex = $(textarea).val().indexOf('<#>');
       $(textarea).focus();
