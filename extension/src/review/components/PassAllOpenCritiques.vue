@@ -14,7 +14,7 @@ export default {
       $('input:radio[value="passed"]').click();
       setTimeout(() => {
         $('.critique-container').each(function () {  // eslint-disable-line
-          $(this).find('button:first').click();
+          $(this).find('button.btn-secondary').click();
         });
         $(this.$el)
           .empty()
