@@ -1,4 +1,5 @@
 import requests
+from .udacity import ME_URL
 
 
 class UdacityTokenMiddleware:
@@ -12,9 +13,11 @@ class UdacityTokenMiddleware:
                 'content-type': 'application/json;charset=UTF-8',
             }
             response = requests.get(
-                'https://review-api.udacity.com/api/v1/me.json',
-                headers=request.udacity_headers
+                ME_URL,
+                headers=request.udacity_headers,
             )
-            request.reviewer_id = response.json()['id']
+            response_json = response.json()
+            request.reviewer_id = response_json['id']
+            request.reviewer_languages = response_json['mentor_languages']
         response = self.get_response(request)
         return response

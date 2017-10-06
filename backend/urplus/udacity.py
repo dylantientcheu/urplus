@@ -1,0 +1,13 @@
+BASE_URL = 'https://review-api.udacity.com/api/v1/'
+ASSIGNED_URL = BASE_URL + 'me/submissions/assigned.json'
+ASSIGNED_COUNT_URL = BASE_URL + 'me/submissions/assigned_count.json'
+CERTIFICATIONS_URL = BASE_URL + 'me/certifications.json'
+CRITIQUES_URL = BASE_URL + 'submissions/{}/critiques.json'
+ME_URL = BASE_URL + 'me.json'
+SUBMISSIONS_URL = BASE_URL + 'submissions/{}.json'
+SUBMISSION_REQUEST_CREATE_URL = BASE_URL + 'submission_requests.json'
+SUBMISSION_REQUEST_INSTANCE_URL = BASE_URL + 'submission_requests/{}.json'
+SUBMISSION_REQUEST_REFRESH_URL = BASE_URL + 'submission_requests/{}/refresh.json'
+SUBMISSION_REQUESTS_ME_URL = BASE_URL + 'me/submission_requests.json'
+
+SUBMISSION_URL = 'https://review.udacity.com/#!/submissions/{}'

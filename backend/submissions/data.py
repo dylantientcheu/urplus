@@ -4,12 +4,12 @@ import time
 from django.utils.dateparse import parse_datetime
 from random import randint
 from requests.exceptions import ConnectionError
+from urplus.udacity import SUBMISSIONS_URL
 from .models import Submission
 
-SUBMISSIONS_URL = 'https://review-api.udacity.com/api/v1/submissions/{}.json'
 UDACITY_HEADERS = {
     'authorization': os.getenv('MY_UDACITY_AUTH'),
-    'content-type': 'application/json;charset=UTF-8'
+    'content-type': 'application/json;charset=UTF-8',
 }
 
 

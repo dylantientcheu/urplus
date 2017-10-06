@@ -3,15 +3,15 @@ from django.http import JsonResponse
 from django.views import View
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
+from urplus.udacity import CRITIQUES_URL, SUBMISSIONS_URL
 from .models import Comment, Critique, GeneralComment
 from .serializers import CommentSerializer, CritiqueSerializer, GeneralCommentSerializer
 
 
-class GetSubmissionInfoView(View):
+class SubmissionInfoView(View):
     def get(self, request):
         response = requests.get(
-            'https://review-api.udacity.com/api/v1/submissions/{}.json'
-                .format(request.GET['submission_id']),
+            SUBMISSIONS_URL.format(request.GET['submission_id']),
             headers=request.udacity_headers,
         )
         response_json = response.json()
@@ -22,11 +22,10 @@ class GetSubmissionInfoView(View):
         })
 
 
-class GetSubmissionCritiquesView(View):
+class SubmissionCritiquesView(View):
     def get(self, request):
         response = requests.get(
-            'https://review-api.udacity.com/api/v1/submissions/{}/critiques.json'
-                .format(request.GET['submission_id']),
+            CRITIQUES_URL.format(request.GET['submission_id']),
             headers=request.udacity_headers,
         )
         return JsonResponse({
@@ -34,7 +33,7 @@ class GetSubmissionCritiquesView(View):
         })
 
 
-class GetRemarksView(View):
+class AllRemarksView(View):
     def get(self, request):
         comment_queryset = Comment.objects.filter(
             reviewer_id=request.reviewer_id,
