@@ -13,10 +13,4 @@ urlpatterns = [
     url(r'^submission-critiques/$', SubmissionCritiquesView.as_view()),
     url(r'^all/$', AllRemarksView.as_view()),
     url(r'', include(router.urls)),
-
-    # old api
-    url(r'^get-submission-info/$', SubmissionInfoView.as_view()),
-    url(r'^get-submission-critiques/$', SubmissionCritiquesView.as_view()),
-    url(r'^get-remarks/$', AllRemarksView.as_view()),
-    url(r'^api/v1/', include(router.urls)),
 ]
