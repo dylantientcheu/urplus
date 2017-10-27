@@ -25,7 +25,7 @@ DJANGO_SECRET_KEY=dev
 nano extension/src/background.js
 ```
 
-Replace `baseURL: 'https://urplus.herokuapp.com/api/v1/',` with `baseURL: 'https://localhost:8000/api/v1/',`
+In `background.js`, replace `baseURL: 'https://urplus.herokuapp.com/api/v1/',` with `baseURL: 'https://localhost:8000/api/v1/',`
 
 ``` bash
 # install dependencies
