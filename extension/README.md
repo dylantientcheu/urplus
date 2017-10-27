@@ -21,6 +21,13 @@ DJANGO_SECRET_KEY=dev
 ```
 
 ``` bash
+# point outgoing requests to localhost
+nano extension/src/background.js
+```
+
+Replace `baseURL: 'https://urplus.herokuapp.com/api/v1/',` with `baseURL: 'https://localhost:8000/api/v1/',`
+
+``` bash
 # install dependencies
 cd extension
 npm install
@@ -29,4 +36,12 @@ npm install
 npm run build
 ```
 
-Then, copy the `extension/dist` folder into `chrome://extensions/`
+Copy the `extension/dist` folder into `chrome://extensions/`
+
+``` bash
+# run local server
+cd ../backend
+python manage.py runserver_plus --cert /tmp/cert
+```
+
+**Note** you may have to add a chrome experimental flag that allows using invalid SSL certificates over `localhost`. Open `chrome://flags/` in your browser and enable "Allow invalid certificates for resources loaded from localhost". Then, restart your browser.
