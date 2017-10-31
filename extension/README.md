@@ -5,13 +5,18 @@ Chrome extension for Udacity Review Plus
 ## Build locally
 
 ``` bash
-# clone root repo
-git clone git@github.com:michaelhays/urplus.git
+# clone root repo and cd into it
+git clone https://github.com/michaelhays/urplus.git
+cd urplus
 
-# create local database and .env file
+# create local Postgres database
 createdb urplus
+
+# create .env file
 nano backend/.env
 ```
+
+In the `.env` file you just created, add the following:
 
 ```
 DATABASE_URL=postgres://<username>:<password>@localhost:5432/urplus
@@ -20,15 +25,17 @@ DJANGO_DEBUG=TRUE
 DJANGO_SECRET_KEY=dev
 ```
 
+Remember to replace `<username>` and `<password>` above with your local Postgres credentials.
+
 ``` bash
 # point outgoing requests to localhost
 nano extension/src/background.js
 ```
 
-In `background.js`, replace `baseURL: 'https://urplus.herokuapp.com/api/v1/',` with `baseURL: 'https://localhost:8000/api/v1/',`
+In `background.js`, replace `baseURL: 'https://urplus.herokuapp.com/api/v1/',` with `baseURL: 'https://localhost:8000/api/v1/',` so that it sends requests to `localhost`.
 
 ``` bash
-# install dependencies
+# install extension dependencies
 cd extension
 npm install
 
@@ -39,8 +46,17 @@ npm run build
 Copy the `extension/dist` folder into `chrome://extensions/`
 
 ``` bash
-# run local server
+# create Python virtual environment
 cd ../backend
+conda create -n urplus python=3
+source activate urplus
+pip install -r requirements.txt
+
+# migrate local database
+python manage.py makemigrations
+python manage.py migrate
+
+# run local server
 python manage.py runserver_plus --cert /tmp/cert
 ```
 
