@@ -10,10 +10,6 @@
         with the usage being as simple as selecting the desired certified projects to assign
         and toggling a master on/off switch.
       </p>
-      <p class="text-secondary">
-        * If you have mobile development experience, I would love if you could contribute!
-        Reach out to me on Slack por favor.
-      </p>
     </div>
   </main>
 </template>
