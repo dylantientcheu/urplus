@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import AllProjects from '../components/submissions/AllProjects';
 import Assign from '../components/Assign';
 import Home from '../components/Home';
+import NotFound from '../components/NotFound';
 import Remarks from '../components/Remarks';
 import SelectProjects from '../components/submissions/SelectProjects';
 import Submissions from '../components/submissions/Submissions';
@@ -24,6 +25,7 @@ const routes = [
       { path: 'select-projects', name: 'SelectProjects', component: SelectProjects },
     ],
   },
+  { path: '*', name: 'Not Found', component: NotFound },
 ];
 
 export default new Router({
