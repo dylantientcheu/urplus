@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Submission
-from .serializers import SubmissionSerializer
+from submissions.models import Submission
+from submissions.serializers import SubmissionSerializer
 
 
 class SubmissionViewSet(viewsets.ReadOnlyModelViewSet):

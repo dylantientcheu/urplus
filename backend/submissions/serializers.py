@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Submission
+from submissions.models import Submission
 
 
 class SubmissionSerializer(serializers.HyperlinkedModelSerializer):

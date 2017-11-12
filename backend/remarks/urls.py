@@ -1,16 +1,15 @@
 from django.conf.urls import url, include
+from remarks import views
 from rest_framework.routers import DefaultRouter
-from .views import SubmissionInfoView, SubmissionCritiquesView, AllRemarksView, \
-    CommentViewSet, CritiqueViewSet, GeneralCommentViewSet
 
 router = DefaultRouter()
-router.register(r'comments', CommentViewSet)
-router.register(r'critiques', CritiqueViewSet)
-router.register(r'generalComments', GeneralCommentViewSet)
+router.register(r'comments', views.CommentViewSet)
+router.register(r'critiques', views.CritiqueViewSet)
+router.register(r'generalComments', views.GeneralCommentViewSet)
 
 urlpatterns = [
-    url(r'^submission-info/$', SubmissionInfoView.as_view()),
-    url(r'^submission-critiques/$', SubmissionCritiquesView.as_view()),
-    url(r'^all/$', AllRemarksView.as_view()),
+    url(r'^submission-info/$', views.SubmissionInfoView.as_view()),
+    url(r'^submission-critiques/$', views.SubmissionCritiquesView.as_view()),
+    url(r'^all/$', views.AllRemarksView.as_view()),
     url(r'', include(router.urls)),
 ]

@@ -4,8 +4,8 @@ import time
 from django.utils.dateparse import parse_datetime
 from random import randint
 from requests.exceptions import ConnectionError
+from submissions.models import Submission
 from urplus.udacity import SUBMISSIONS_URL
-from .models import Submission
 
 UDACITY_HEADERS = {
     'authorization': os.getenv('MY_UDACITY_AUTH'),
@@ -26,7 +26,7 @@ def get_latest_submission():
             SUBMISSIONS_URL.format(sub), headers=UDACITY_HEADERS)
         if response.status_code == 200:
             return 'latest'
-        
+
         return 'hi'
 
     lo = 1

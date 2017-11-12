@@ -1,10 +1,10 @@
 from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
-from .views import SubmissionViewSet
+from submissions import views
 
 router = DefaultRouter()
-router.register(r'submissions', SubmissionViewSet)
+router.register(r'submissions', views.SubmissionViewSet)
 
 urlpatterns = [
-    url(r'^api/v1/', include(router.urls)),
+    url(r'', include(router.urls)),
 ]
