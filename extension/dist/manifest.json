@@ -14,7 +14,7 @@
     "128": "icons/icon128.png"
   },
   "background": {
-    "scripts": ["background.js"],
+    "scripts": ["background.js", "recurring.js"],
     "persistent": false
   },
   "content_scripts": [
@@ -25,6 +25,7 @@
     }
   ],
   "permissions": [
+    "alarms",
     "cookies",
     "storage",
     "tabs",

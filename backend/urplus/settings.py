@@ -13,11 +13,13 @@ ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
 # Application definition
 
 INSTALLED_APPS = [
+    'assign.apps.AssignConfig',
     'remarks.apps.RemarksConfig',
     'submissions.apps.SubmissionsConfig',
 
-    'rest_framework',
     'django_extensions',
+    'django_rq',
+    'rest_framework',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -33,7 +35,7 @@ MIDDLEWARE = [
     'urplus.middleware.UdacityTokenMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -89,3 +91,13 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [FRONTEND_DIR + '/static']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+# Queue
+
+RQ_QUEUES = {
+    'default': {
+        'URL': os.getenv('REDISTOGO_URL', 'redis://localhost:6379'),
+        'DEFAULT_TIMEOUT': 300,
+    },
+}
