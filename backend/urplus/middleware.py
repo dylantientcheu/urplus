@@ -19,6 +19,5 @@ class UdacityTokenMiddleware:
             )
             me_response_json = me_response.json()
             request.reviewer_id = me_response_json['id']
-            request.reviewer_languages = me_response_json['mentor_languages']
         response = self.get_response(request)
         return response
