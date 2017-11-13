@@ -34,6 +34,12 @@
         <li class="nav-item assign">
           <a class="nav-link" href="#introduction">Introduction</a>
         </li>
+        <li class="nav-item assign">
+          <a class="nav-link" href="#installation">Installation</a>
+        </li>
+        <li class="nav-item assign">
+          <a class="nav-link" href="#tutorial">Tutorial</a>
+        </li>
       </div>
       <li class="nav-item submissions">
         <router-link class="nav-link" to="/submissions">Submission Analysis</router-link>
