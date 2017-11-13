@@ -37,7 +37,7 @@ export function getMonthlyIncome(axiosInstance) {
 export function getAssignmentDashboard(axiosInstance) {
   axiosInstance({
     method: 'get',
-    baseURL: 'https://localhost:8000/api/v1',
+    baseURL: 'https://urplus.herokuapp.com/api/v1',
     url: '/assign/status/',
   })
     .then((response) => {

@@ -35,8 +35,8 @@
       <p>
         You can open the app by clicking the Chrome extension icon at the top right
         corner of your Chrome browser:
+        <img class="border border-dark" src="../assets/popup-icon.png">
       </p>
-      <img src="../assets/popup-icon.png">
       <br><br>
       <p>
         This icon will have a text badge with the number of currently assigned projects.

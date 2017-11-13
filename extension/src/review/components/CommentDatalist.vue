@@ -5,6 +5,8 @@
       :key="topic"
       :value="topic"
     >
+      {{ topic }}
+    </option>
   </datalist>
 </template>
 

@@ -14,9 +14,12 @@
         Udacity Review Plus is a collection of apps for the enhancement of the Udacity reviewer experience.
       </p>
       <p>
-        Currently, only the <router-link to="/remarks">Remark Storage</router-link> app is live.
-        <router-link to="/assign">Remote Assignment</router-link> is coming soon,
-        and <router-link to="/submissions">Submission Analysis</router-link> after that.
+        Currently, there are two live apps: <router-link to="/remarks">Remark Storage</router-link>, and
+        <router-link to="/assign">Remote Assignment</router-link>.
+      </p>
+      <p>
+        Eventually, I plan to run some data analysis through historical
+        <router-link to="/submissions">Submission Analysis</router-link> (maybe).
       </p>
       <p class="text-secondary">
         <strong>Disclaimer:</strong> Udacity Review Plus is not built or endorsed by Udacity, Inc.
