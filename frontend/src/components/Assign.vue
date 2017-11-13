@@ -37,7 +37,6 @@
         corner of your Chrome browser:
         <img class="border border-dark" src="../assets/popup-icon.png">
       </p>
-      <br><br>
       <p>
         This icon will have a text badge with the number of currently assigned projects.
         Clicking the icon reveals the main GUI:
