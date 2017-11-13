@@ -30,6 +30,7 @@ export function getMonthlyIncome(axiosInstance) {
       response.data.forEach((project) => {
         monthlyIncome += parseFloat(project.price);
       });
+      monthlyIncome = (monthlyIncome).toFixed(2);
       chrome.storage.local.set({ monthlyIncome });
     });
 }
