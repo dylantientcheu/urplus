@@ -33,7 +33,7 @@
       <h2 id="tutorial">Tutorial</h2>
       <hr>
       <p>
-        You can open the app by clicking the Chrome extension icon at the top right
+        You can open the app by clicking the Chrome Extension icon at the top right
         corner of your Chrome browser:
         <img class="border border-dark" src="../assets/popup-icon.png">
       </p>

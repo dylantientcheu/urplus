@@ -178,7 +178,7 @@
         To store a remark, simply compose a remark as you normally would by choosing the
         category and writing the body. Then, provide the remark identification by
         entering the title field and (if necessary) topic field.
-        Lastly, store the comment in the Udacity Review Plus database by clicking the <i>Add new remark</i> button:
+        Lastly, store the comment in the urPlus database by clicking the <i>Add new remark</i> button:
       </p>
       <p>
         <button class="btn urplus-btn-primary" title="Add new remark"><span class="fa fa-plus"></span></button>
@@ -198,7 +198,7 @@
         <code>&lt;textarea&gt;</code> with the desired content to populate the body.
         Then, we enter <code>bio.skills forEach</code> for the title and <code>Display</code> for the topic.
         Once our four comment fields are entered, we click the <i>Add new remark</i> button
-        and our comment is stored in the Udacity Review Plus database.
+        and our comment is stored in the urPlus database.
       </p>
       <p>
         The process is the same for storing critiques and general comments,
@@ -378,7 +378,7 @@
         separated from remarks that another Udacity reviewer creates &ndash;
         all without having to create a separate account.
         This means that as long as you are using a browser on which you
-        have installed the Udacity Review Plus Chrome Extension,
+        have installed the urPlus Chrome Extension,
         you will have access to all of your remarks.
       </p>
     </div>

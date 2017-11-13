@@ -2,7 +2,7 @@
   <div id="loading-modal">
     <modal name="loading" :clickToClose="false">
       <div class="loading-wrapper">
-        <h1>Loading Udacity Review Plus</h1>
+        <h1>Loading urPlus</h1>
         <img src="/assets/images/loading.gif">
       </div>
     </modal>

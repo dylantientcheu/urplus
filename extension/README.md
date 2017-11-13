@@ -1,6 +1,6 @@
-# Udacity Review Plus Extension
+# urPlus Extension
 
-Chrome extension for Udacity Review Plus
+Chrome extension for urPlus
 
 ## Build locally
 

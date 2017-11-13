@@ -1,4 +1,4 @@
-# Udacity Review Plus
+# urPlus
 
 Documentation: https://urplus.herokuapp.com/
 

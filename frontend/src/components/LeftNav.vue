@@ -1,7 +1,7 @@
 <template>
   <nav id="left-nav">
-    <div class="nav-header">
-      <router-link to="/">Udacity Review <strong>Plus</strong></router-link>
+    <div class="nav-header text-center">
+      <router-link to="/">ur<strong>Plus</strong></router-link>
     </div>
     <ul class="nav nav-pills flex-column">
       <li class="nav-item remarks">

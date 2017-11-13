@@ -1,7 +1,7 @@
 {
   "name": "urplus-extension",
   "version": "1.0.0",
-  "description": "Chrome extension for Udacity Review Plus",
+  "description": "Chrome extension for urPlus",
   "author": "Michael Hays <michaelhays36@gmail.com>",
   "private": true,
   "scripts": {

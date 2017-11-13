@@ -11,7 +11,7 @@
       <h1>Overview</h1>
       <hr>
       <p>
-        Udacity Review Plus is a collection of apps for the enhancement of the Udacity reviewer experience.
+        urPlus is a collection of apps for the enhancement of the Udacity reviewer experience.
       </p>
       <p>
         Currently, there are two live apps: <router-link to="/remarks">Remark Storage</router-link>, and
@@ -22,15 +22,11 @@
         <router-link to="/submissions">Submission Analysis</router-link> (maybe).
       </p>
       <p class="text-secondary">
-        <strong>Disclaimer:</strong> Udacity Review Plus is not built or endorsed by Udacity, Inc.
+        <strong>Disclaimer:</strong> urPlus is not built or endorsed by Udacity, Inc.
       </p>
     </div>
   </main>
 </template>
-
-<script>
-
-</script>
 
 <style lang="scss">
 @keyframes octocat-wave {
