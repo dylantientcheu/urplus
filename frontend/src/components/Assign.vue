@@ -51,7 +51,7 @@
       </p>
       <p>
         The popup data updates every 60 seconds while the popup is closed,
-        and every five seconds while it is open. Each update involves server requests
+        and every 10 seconds while it is open. Each update involves server requests
         to both Udacity's servers and the urPlus servers, so kindly avoid leaving the
         popup open for extended periods of time :)
       </p>

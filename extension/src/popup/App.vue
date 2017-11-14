@@ -37,7 +37,7 @@ export default {
   methods: {
     load() {
       chrome.runtime.sendMessage({ func: 'runRecurring' });
-      setTimeout(this.load, 5000);
+      setTimeout(this.load, 10000);
     },
   },
 };
