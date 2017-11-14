@@ -5,7 +5,6 @@ from remarks.models import Comment, Critique, GeneralComment
 from remarks.serializers import CommentSerializer, CritiqueSerializer, GeneralCommentSerializer
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
-from rest_framework.permissions import IsAuthenticated
 from urplus.udacity import CRITIQUES_URL, SUBMISSIONS_URL
 
 
@@ -61,7 +60,11 @@ class AllRemarksView(View):
 class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
-    permission_classes = (IsAuthenticated,)
+
+    def get_queryset(self):
+        if hasattr(self.request, 'reviewer_id'):
+            return Comment.objects.filter(reviewer_id=self.request.reviewer_id)
+        return Comment.objects.none()
 
     def perform_create(self, serializer):
         comment_data = self.request.data
@@ -87,7 +90,11 @@ class CommentViewSet(viewsets.ModelViewSet):
 class CritiqueViewSet(viewsets.ModelViewSet):
     queryset = Critique.objects.all()
     serializer_class = CritiqueSerializer
-    permission_classes = (IsAuthenticated,)
+
+    def get_queryset(self):
+        if hasattr(self.request, 'reviewer_id'):
+            return Critique.objects.filter(reviewer_id=self.request.reviewer_id)
+        return Critique.objects.none()
 
     def perform_create(self, serializer):
         critique_data = self.request.data
@@ -113,7 +120,11 @@ class CritiqueViewSet(viewsets.ModelViewSet):
 class GeneralCommentViewSet(viewsets.ModelViewSet):
     queryset = GeneralComment.objects.all()
     serializer_class = GeneralCommentSerializer
-    permission_classes = (IsAuthenticated,)
+
+    def get_queryset(self):
+        if hasattr(self.request, 'reviewer_id'):
+            return GeneralComment.objects.filter(reviewer_id=self.request.reviewer_id)
+        return GeneralComment.objects.none()
 
     def perform_create(self, serializer):
         general_comment_data = self.request.data
