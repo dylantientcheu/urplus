@@ -45,6 +45,8 @@ def update_submission_request(runner):
 
 class StatusView(View):
     def get(self, request):
+        if not request.reviewer_id:
+            return HttpResponse(status=400)
         runner = AssignRunner.objects.filter(reviewer_id=request.reviewer_id).first()
         if runner:
             return JsonResponse({
