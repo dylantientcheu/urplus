@@ -60,6 +60,7 @@ class StartAssignRunnerView(View):
         runner = AssignRunner.objects.filter(reviewer_id=request.reviewer_id).first()
         if runner:
             runner.active = True
+            runner.udacity_jwt=request.udacity_jwt
             runner.save()
         else:
             data = json.loads(request.body.decode('utf-8'))
