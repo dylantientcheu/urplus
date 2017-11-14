@@ -9,7 +9,7 @@ from urplus.udacity import SUB_REQ_ME_URL, SUB_REQ_INSTANCE_URL, \
 
 
 def update_submission_request(runner):
-    if not runner.active:
+    if not runner.active or not runner.projects:
         return
     udacity_headers = {
         'authorization': runner.udacity_jwt,
@@ -68,14 +68,15 @@ class StartAssignRunnerView(View):
                 udacity_jwt=request.udacity_jwt,
             )
         update_submission_request(runner)
-        return HttpResponse(status=201)
+        return HttpResponse(status=200)
 
 
 class StopAssignRunnerView(View):
     def post(self, request):
         runner = AssignRunner.objects.filter(reviewer_id=request.reviewer_id).first()
-        runner.active = False
-        runner.save()
+        if runner:
+            runner.active = False
+            runner.save()
         me_sub_json = requests.get(
             SUB_REQ_ME_URL,
             headers=request.udacity_headers,
@@ -92,7 +93,8 @@ class UpdateProjectsView(View):
     def post(self, request):
         data = json.loads(request.body.decode('utf-8'))
         runner = AssignRunner.objects.filter(reviewer_id=request.reviewer_id).first()
-        runner.projects = data['projects']
-        runner.save()
-        update_submission_request(runner)
+        if runner:
+            runner.projects = data['projects']
+            runner.save()
+            update_submission_request(runner)
         return HttpResponse(status=200)
