@@ -3,6 +3,7 @@ import json
 import requests
 from assign.models import AssignRunner
 from django.http import HttpResponse, JsonResponse
+from django.shortcuts import get_object_or_404
 from django.views import View
 from urplus.udacity import SUB_REQ_ME_URL, SUB_REQ_INSTANCE_URL, \
     SUB_REQ_REFRESH_URL, SUB_REQ_CREATE_URL
@@ -47,12 +48,11 @@ class StatusView(View):
     def get(self, request):
         if not request.reviewer_id:
             return HttpResponse(status=400)
-        runner = AssignRunner.objects.filter(reviewer_id=request.reviewer_id).first()
-        if runner:
-            return JsonResponse({
-                'assignRunnerActive': runner.active,
-                'assigningProjects': runner.projects,
-            })
+        runner = get_object_or_404(AssignRunner, reviewer_id=request.reviewer_id)
+        return JsonResponse({
+            'assignRunnerActive': runner.active,
+            'assigningProjects': runner.projects,
+        })
 
 
 class StartAssignRunnerView(View):
@@ -94,9 +94,8 @@ class StopAssignRunnerView(View):
 class UpdateProjectsView(View):
     def post(self, request):
         data = json.loads(request.body.decode('utf-8'))
-        runner = AssignRunner.objects.filter(reviewer_id=request.reviewer_id).first()
-        if runner:
-            runner.projects = data['projects']
-            runner.save()
-            update_submission_request(runner)
+        runner = get_object_or_404(AssignRunner, reviewer_id=request.reviewer_id)
+        runner.projects = data['projects']
+        runner.save()
+        update_submission_request(runner)
         return HttpResponse(status=200)
