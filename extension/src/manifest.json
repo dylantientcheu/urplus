@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "urPlus",
   "description": "A chrome extension to enhance the Udacity reviewer experience.",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "author": "Michael Hays",
 
   "browser_action": {
