@@ -15,9 +15,9 @@ class SubmissionInfoView(View):
             headers=request.udacity_headers,
         )
         sub_response_json = sub_response.json()
-        project_id = sub_response_json['project_id']
+        rubric_id = sub_response_json['rubric_id']
         rub_response = requests.get(
-            RUBRICS_URL.format(project_id),
+            RUBRICS_URL.format(rubric_id),
             headers=request.udacity_headers,
         )
         rub_response_json = rub_response.json()
