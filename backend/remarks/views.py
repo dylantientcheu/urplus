@@ -5,20 +5,26 @@ from remarks.models import Comment, Critique, GeneralComment
 from remarks.serializers import CommentSerializer, CritiqueSerializer, GeneralCommentSerializer
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
-from urplus.udacity import CRITIQUES_URL, SUBMISSIONS_URL
+from urplus.udacity import CRITIQUES_URL, RUBRICS_URL, SUBMISSIONS_URL
 
 
 class SubmissionInfoView(View):
     def get(self, request):
-        response = requests.get(
+        sub_response = requests.get(
             SUBMISSIONS_URL.format(request.GET['submission_id']),
             headers=request.udacity_headers,
         )
-        response_json = response.json()
+        sub_response_json = sub_response.json()
+        project_id = sub_response_json['project_id']
+        rub_response = requests.get(
+            RUBRICS_URL.format(project_id),
+            headers=request.udacity_headers,
+        )
+        rub_response_json = rub_response.json()
         return JsonResponse({
-            'generalComment': response_json['general_comment'],
-            'price': response_json['price'],
-            'projectName': response_json['project']['name'],
+            'generalComment': sub_response_json['general_comment'],
+            'price': sub_response_json['price'],
+            'projectName': rub_response_json['project']['name'],
         })
 
 
