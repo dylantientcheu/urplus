@@ -15,7 +15,6 @@ ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
 INSTALLED_APPS = [
     'assign.apps.AssignConfig',
     'remarks.apps.RemarksConfig',
-    'submissions.apps.SubmissionsConfig',
 
     'django_extensions',
     'django_rq',

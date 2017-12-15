@@ -41,23 +41,6 @@
           <a class="nav-link" href="#tutorial">Tutorial</a>
         </li>
       </div>
-      <li class="nav-item submissions">
-        <router-link class="nav-link" to="/submissions">Submission Analysis</router-link>
-      </li>
-      <div
-        v-if="this.$route.path.includes('/submissions')"
-        class="nav-item-child-group"
-      >
-        <li class="nav-item submissions">
-          <router-link class="nav-link" to="/submissions/introduction">Introduction</router-link>
-        </li>
-        <li class="nav-item submissions">
-          <router-link class="nav-link" to="/submissions/all-projects">All Projects</router-link>
-        </li>
-        <li class="nav-item submissions">
-          <router-link class="nav-link" to="/submissions/select-projects">Select Projects</router-link>
-        </li>
-      </div>
     </ul>
     <div class="nav-footer">
       <span>Created by Michael Hays</span>

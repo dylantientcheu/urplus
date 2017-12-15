@@ -17,10 +17,6 @@
         Currently, there are two live apps: <router-link to="/remarks">Remark Storage</router-link>, and
         <router-link to="/assign">Remote Assignment</router-link>.
       </p>
-      <p>
-        Eventually, I plan to run some data analysis through historical
-        <router-link to="/submissions">Submission Analysis</router-link> (maybe).
-      </p>
       <p class="text-secondary">
         <strong>Disclaimer:</strong> urPlus is not built or endorsed by Udacity, Inc.
       </p>
