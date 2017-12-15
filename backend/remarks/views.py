@@ -84,7 +84,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         comment_dict = {k: v for k, v in comment_data.items() if k in comment_fields}
         comment_dict['reviewer_id'] = self.request.reviewer_id
         serializer.save(**comment_dict)
-    
+
     @detail_route(methods=['post'])
     def increment(self, request, pk=None):
         comment = self.get_object()
@@ -114,7 +114,7 @@ class CritiqueViewSet(viewsets.ModelViewSet):
         critique_dict = {k: v for k, v in critique_data.items() if k in critique_fields}
         critique_dict['reviewer_id'] = self.request.reviewer_id
         serializer.save(**critique_dict)
-    
+
     @detail_route(methods=['post'])
     def increment(self, request, pk=None):
         critique = self.get_object()
@@ -143,7 +143,7 @@ class GeneralCommentViewSet(viewsets.ModelViewSet):
         general_comment_dict = {k: v for k, v in general_comment_data.items() if k in general_comment_fields}
         general_comment_dict['reviewer_id'] = self.request.reviewer_id
         serializer.save(**general_comment_dict)
-    
+
     @detail_route(methods=['post'])
     def increment(self, request, pk=None):
         general_comment = self.get_object()
