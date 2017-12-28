@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.postgres.fields import JSONField, ArrayField
+from django.contrib.postgres.fields import JSONField
 
 
 class AssignRunner(models.Model):
