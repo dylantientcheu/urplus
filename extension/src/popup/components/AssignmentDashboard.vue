@@ -28,11 +28,8 @@
               <span class="slider-round"></span>
             </label>
           </div>
-          <div class="col-8 project-name">
+          <div class="col-10 project-name">
             <span>{{ cert.project.name }}</span>
-          </div>
-          <div class="col-2">
-            <span v-if="cert.wait > 0 && cert.assigning && assignRunnerActive">{{ cert.wait }}</span>
           </div>
         </div>
       </div>

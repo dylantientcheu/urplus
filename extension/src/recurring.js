@@ -45,58 +45,19 @@ export function getAssignmentDashboard(axiosInstance) {
       const assignRunnerActive = response.data.assignRunnerActive;
       const assigningProjects = response.data.assigningProjects;
       chrome.storage.local.set({ assignRunnerActive });
-      axiosInstance({
-        method: 'get',
-        baseURL: 'https://review-api.udacity.com/api/v1',
-        url: '/me/submission_requests.json',
-      })
-        .then((response) => {
-          if (response.data.length === 0) {
-            chrome.storage.local.get('certs', (data) => {
-              if ('certs' in data) {
-                const certs = data.certs;
-                certs.forEach((cert) => {
-                  cert.assigning = false;
-                  cert.wait = 0;
-                  assigningProjects.forEach((project) => {
-                    if (project.project_id === cert.project_id) {
-                      cert.assigning = true;
-                    }
-                  });
-                });
-                chrome.storage.local.set({ certs });
+      chrome.storage.local.get('certs', (data) => {
+        if ('certs' in data) {
+          const certs = data.certs;
+          certs.forEach((cert) => {
+            cert.assigning = false;
+            assigningProjects.forEach((project) => {
+              if (project.project_id === cert.project_id) {
+                cert.assigning = true;
               }
             });
-            return;
-          }
-          axiosInstance({
-            method: 'get',
-            baseURL: 'https://review-api.udacity.com/api/v1',
-            url: `/submission_requests/${response.data[0].id}/waits.json`,
-          })
-            .then((response) => {
-              const waits = response.data;
-              chrome.storage.local.get('certs', (data) => {
-                if ('certs' in data) {
-                  const certs = data.certs;
-                  certs.forEach((cert) => {
-                    cert.assigning = false;
-                    cert.wait = 0;
-                    assigningProjects.forEach((project) => {
-                      if (project.project_id === cert.project_id) {
-                        cert.assigning = true;
-                      }
-                    });
-                  });
-                  waits.forEach((wait) => {
-                    const cert = certs
-                      .filter(cert => cert.project_id === wait.project_id)[0];
-                    cert.wait = wait.position;
-                  });
-                  chrome.storage.local.set({ certs });
-                }
-              });
-            });
-        });
+          });
+          chrome.storage.local.set({ certs });
+        }
+      });
     });
 }
