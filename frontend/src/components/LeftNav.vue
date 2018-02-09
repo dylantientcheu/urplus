@@ -24,23 +24,6 @@
           <a class="nav-link" href="#authentication">Authentication</a>
         </li>
       </div>
-      <li class="nav-item assign">
-        <router-link class="nav-link" to="/assign">Remote Assignment</router-link>
-      </li>
-      <div
-        v-if="this.$route.path === '/assign'"
-        class="nav-item-child-group"
-      >
-        <li class="nav-item assign">
-          <a class="nav-link" href="#introduction">Introduction</a>
-        </li>
-        <li class="nav-item assign">
-          <a class="nav-link" href="#installation">Installation</a>
-        </li>
-        <li class="nav-item assign">
-          <a class="nav-link" href="#tutorial">Tutorial</a>
-        </li>
-      </div>
     </ul>
     <div class="nav-footer">
       <span>Created by Michael Hays</span>

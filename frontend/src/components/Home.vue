@@ -14,8 +14,7 @@
         urPlus is a collection of apps for the enhancement of the Udacity reviewer experience.
       </p>
       <p>
-        Currently, there are two live apps: <router-link to="/remarks">Remark Storage</router-link>, and
-        <router-link to="/assign">Remote Assignment</router-link>.
+        Currently, there is one live app: <router-link to="/remarks">Remark Storage</router-link>.
       </p>
       <p class="text-secondary">
         <strong>Disclaimer:</strong> urPlus is not built or endorsed by Udacity, Inc.

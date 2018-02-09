@@ -1,6 +1,7 @@
-from django.conf.urls import url, include
-from remarks import views
+from django.conf.urls import include, url
 from rest_framework.routers import DefaultRouter
+
+from remarks import views
 
 router = DefaultRouter()
 router.register(r'comments', views.CommentViewSet)

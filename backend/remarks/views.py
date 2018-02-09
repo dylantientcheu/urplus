@@ -1,10 +1,12 @@
 import requests
 from django.http import JsonResponse
 from django.views import View
-from remarks.models import Comment, Critique, GeneralComment
-from remarks.serializers import CommentSerializer, CritiqueSerializer, GeneralCommentSerializer
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route
+
+from remarks.models import Comment, Critique, GeneralComment
+from remarks.serializers import (CommentSerializer, CritiqueSerializer,
+                                 GeneralCommentSerializer)
 from urplus.udacity import CRITIQUES_URL, RUBRICS_URL, SUBMISSIONS_URL
 
 

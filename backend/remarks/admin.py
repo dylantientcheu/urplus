@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from remarks.models import Comment, Critique, GeneralComment
 
 admin.site.register(Comment)

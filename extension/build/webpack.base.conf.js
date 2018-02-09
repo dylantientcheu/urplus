@@ -10,9 +10,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    popup: './src/popup/main.js',
     background: './src/background.js',
-    recurring: './src/recurring.js',
     review: './src/review/main.js'
   },
   output: {
