@@ -8,7 +8,7 @@
           class="btn urplus-btn-primary"
           title="Add new remark"
         >
-          <span class="fa fa-plus"></span>
+          <span class="fas fa-plus"></span>
         </button>
         <button
           @click="buttonDispatch('updateRemark', 'upload')"
@@ -16,15 +16,15 @@
           class="btn urplus-btn-primary"
           title="Update existing remark"
         >
-          <span class="fa fa-upload"></span>
+          <span class="fas fa-upload"></span>
         </button>
         <button
-          @click="buttonDispatch('removeRemark', 'trash')"
+          @click="buttonDispatch('removeRemark', 'trash-alt')"
           :disabled="!remarkObjectExists || remarkIsEmpty"
           class="btn urplus-btn-danger"
           title="Remove existing remark"
         >
-          <span class="fa fa-trash"></span>
+          <span class="fas fa-trash-alt"></span>
         </button>
         <input
           v-model="remark.title"
@@ -149,10 +149,6 @@ export default {
       this.filteredRemarks = filteredRemarks.slice(0, 5);
     },
   },
-  mounted() {
-    this.init();
-    this.addListeners();
-  },
   methods: {
     ...Vuex.mapActions([
       'addRemark',
@@ -234,8 +230,8 @@ export default {
         if (!sure) return;
       }
       const $originalSpan = $(this.$el).find(`span.fa-${icon}`);
-      const $loadingSpan = $('<span class="fa fa-refresh fa-spin"></span>');
-      const $okSpan = $('<span class="fa fa-check"></span>').css('color', '#0f0');
+      const $loadingSpan = $('<span class="fas fa-sync fa-spin"></span>');
+      const $okSpan = $('<span class="fas fa-check"></span>').css('color', '#0f0');
       const $button = $originalSpan.parent();
       $button.addClass('disabled');
       $button.empty().append($loadingSpan);
@@ -265,6 +261,10 @@ export default {
       $(textarea).focus();
       textarea.setSelectionRange(placeholderIndex, placeholderIndex + 3);
     },
+  },
+  mounted() {
+    this.init();
+    this.addListeners();
   },
 };
 </script>

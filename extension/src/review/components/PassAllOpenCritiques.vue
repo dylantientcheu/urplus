@@ -18,7 +18,7 @@ export default {
         });
         $(this.$el)
           .empty()
-          .append($('<span class="fa fa-check"></span>'));
+          .append($('<span class="fas fa-check"></span>'));
         setTimeout(() => {
           $(this.$el)
           .text('Pass All Open Critiques');

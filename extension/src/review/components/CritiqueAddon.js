@@ -51,12 +51,12 @@ export default Vue.extend({
       this.addCritiqueListeners();
     },
     addCritiqueListeners() {
-      this.$container.arrive('textarea', () => {
+      this.$container[0].arrive('textarea', () => {
         this.remarkAddonVisible = true;
         this.remarkSaveVisible = true;
         this.$container.find('textarea').trigger('change');
       });
-      this.$container.leave('textarea', () => {
+      this.$container[0].leave('textarea', () => {
         if (this.$container.find('span.result-icon').length) {
           this.remarkAddonVisible = false;
         } else {

@@ -44,13 +44,13 @@ export default Vue.extend({
       }
     },
     addGeneralCommentListeners() {
-      this.$container.arrive('textarea', () => {
+      this.$container[0].arrive('textarea', () => {
         this.remarkAddonVisible = true;
         this.remarkSaveVisible = true;
         this.$container.find('textarea').trigger('change');
         this.observeTextarea();
       });
-      this.$container.leave('textarea', () => {
+      this.$container[0].leave('textarea', () => {
         this.remarkAddonVisible = false;
       });
       this.$container.on('input propertychange', 'textarea', () => {

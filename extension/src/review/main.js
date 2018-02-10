@@ -1,6 +1,6 @@
 /* eslint-disable no-new */
-import 'arrive';
 import 'jquery';
+import 'arrive';
 import Vue from 'vue';
 import store from './store';
 import CommentAddon from './components/CommentAddon';
@@ -20,7 +20,7 @@ function VueTemplate(component, el) {
 }
 
 function addCommentListener() {
-  $(document).arrive('.CodeMirror-code .comment-container', (element) => {
+  $(document)[0].arrive('.CodeMirror-code .comment-container', (element) => {
     const $el = $('<div class="urplus-comment"></div>')
       .insertAfter($(element));
     setTimeout(() => {
@@ -67,8 +67,7 @@ function init() {
   if ($(document).find($('div#loading-modal').length)) {
     $('div#loading-modal').remove();
   }
-  $('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/' +
-    'font-awesome/4.7.0/css/font-awesome.min.css"/>')
+  $('<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">')
     .appendTo('head');
   const submissionId = parseInt(window.location.href.match(/\d+/), 10);
   if (!submissionId || !window.location.href.includes('submissions')) return;
