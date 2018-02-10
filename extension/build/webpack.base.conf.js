@@ -11,7 +11,8 @@ function resolve (dir) {
 module.exports = {
   entry: {
     background: './src/background.js',
-    review: './src/review/main.js'
+    review: './src/review/main.js',
+    popup: './src/popup/main.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -75,10 +76,7 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-      jquery: 'jquery',
-      $: 'jquery',
-      Popper: 'popper.js'
+      $: 'jquery'
     })
   ]
 }
