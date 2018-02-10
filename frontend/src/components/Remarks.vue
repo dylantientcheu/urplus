@@ -381,6 +381,48 @@
         have installed the urPlus Chrome Extension,
         you will have access to all of your remarks.
       </p>
+      <h2 id="download-remarks">Download Remarks</h2>
+      <hr>
+      <p>
+        If you would like to download all of your remarks for a project, navigate to the
+        <a href="https://mentor-dashboard.udacity.com/reviews/overview" target="_blank">
+        Mentor Dashboard</a>, open the dedicated Console by pressing
+        <code>Ctrl+Shift+J</code> (<code>Cmd+Opt+J</code> on Mac), and paste the following
+        JavaScript code to the Console:
+      </p>
+      <div class="code-block">
+        <pre>
+var projectName = 'Online Resume';
+
+/*********************************/
+/* Do not modify the code below. */
+/*********************************/
+var jwt =  document.cookie.substring(
+  document.cookie.indexOf('; _jwt=') + 7,
+  document.cookie.indexOf(';', document.cookie.indexOf('; _jwt=') + 7),
+);
+var copy = copy;
+fetch(`//urplus.herokuapp.com/api/v1/remarks/all/?project_name=${projectName}`, {
+  headers: new Headers({ Authorization: jwt })
+})
+  .then(response => response.json())
+  .then((json) => {
+    copy(json);
+    if (json.comments.length == 0 &&
+        json.critiques.length == 0 &&
+        json.generalComments.length == 0) {
+      console.log('Didn\'t find any remarks, try checking projectName for typos.')
+    } else {
+      console.log('Copied remarks to clipboard!');
+    }
+  });</pre>
+      </div>
+      <p>
+        Be sure to replace <code>Online Resume</code> with whatever project you would
+        like to download. This will copy all of your remarks of the specified project
+        to your clipboard, in JSON format. You will probably want to paste this to a
+        <code>.json</code> file and save it locally.
+      </p>
     </div>
   </main>
 </template>

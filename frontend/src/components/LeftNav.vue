@@ -23,6 +23,9 @@
         <li class="nav-item remarks">
           <a class="nav-link" href="#authentication">Authentication</a>
         </li>
+        <li class="nav-item remarks">
+          <a class="nav-link" href="#download-remarks">Download Remarks</a>
+        </li>
       </div>
     </ul>
     <div class="nav-footer">

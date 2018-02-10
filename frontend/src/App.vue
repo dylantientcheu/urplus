@@ -106,6 +106,16 @@ export default {
       box-shadow: 0 0.25em 0.5em 0 rgba(46,61,73,.12);
       transition: box-shadow .3s ease,border .3s ease;
     }
+
+    .code-block {
+      background: rgb(235, 235, 235);
+      overflow: auto;
+
+      pre {
+        display: inline-block;
+        margin: 20px 30px;
+      }
+    }
   }
 }
 </style>
