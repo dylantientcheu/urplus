@@ -33,9 +33,7 @@
       <h2 id="installation">Installation</h2>
       <hr>
       <p>
-        To install the Remark Storage app (as well as the
-        <router-link to="/assign">Remote Assignment</router-link> app),
-        simply click the button below to install the Chrome Extension.
+        To install the Remark Storage app, simply click the button below to install the Chrome Extension.
       </p>
       <button
         class="btn urplus-btn-primary"
