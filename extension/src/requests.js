@@ -72,16 +72,16 @@ export function getIncome(axiosInstance) {
     url: `/me/submissions/completed.json?start_date=${monthStart.toISOString().slice(0, 10)}`,
   })
     .then((response) => {
-      let dailyIncome = 0;
-      let monthlyIncome = 0;
+      let dailyUSDIncome = 0;
+      let monthlyUSDIncome = 0;
       response.data.forEach((review) => {
-        monthlyIncome += parseFloat(review.price);
+        monthlyUSDIncome += parseFloat(review.price);
         if (review.completed_at >= todayStart.toISOString()) {
-          dailyIncome += parseFloat(review.price);
+          dailyUSDIncome += parseFloat(review.price);
         }
       });
-      chrome.storage.local.set({ dailyIncome: (dailyIncome).toFixed(2) });
-      chrome.storage.local.set({ monthlyIncome: (monthlyIncome).toFixed(2) });
+      chrome.storage.local.set({ dailyUSDIncome: (dailyUSDIncome).toFixed(2) });
+      chrome.storage.local.set({ monthlyUSDIncome: (monthlyUSDIncome).toFixed(2) });
     });
 }
 
