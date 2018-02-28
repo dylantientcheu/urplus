@@ -1,7 +1,7 @@
-# urPlus
+# TERMINATED :grimacing:
 
-Documentation: https://urplus.herokuapp.com/
+I was terminated as a reviewer on February 27, 2018. I guess Udacity doesn't appreciate comparing support for their company to Stockholm Syndrome ¯\\_(ツ)_/¯
 
-### Contributing
+Unfortunately, I can't continue to maintain urPlus without an active reviewer account. I know that a lot of you have accumulated quite a few remarks on urPlus, so while I've removed the Chrome Extension from the web store, I'll leave the API up for a couple of weeks so you can [download your remarks](https://urplus.herokuapp.com/remarks#download-remarks).
 
-The source code is divided into three parts - `backend`, `extension`, and `frontend` (for https://urplus.herokuapp.com/). The part that needs the most immediate help would be writing tests for `extension`. I'm planning do it at some point, maybe.
+It's been nice helping you guys! You're a good group of people, and I wish you all the best of luck.
