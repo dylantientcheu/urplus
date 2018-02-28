@@ -391,15 +391,16 @@
       <div class="code-block">
         <pre>
 var projectName = 'Online Resume';
-
+ 
 /*********************************/
 /* Do not modify the code below. */
 /*********************************/
-var jwt =  document.cookie.substring(
-  document.cookie.indexOf('; _jwt=') + 7,
-  document.cookie.indexOf(';', document.cookie.indexOf('; _jwt=') + 7),
-);
 var copy = copy;
+var jwtStart = document.cookie.indexOf('; _jwt=') + 7;
+if (jwtStart === 6) jwtStart = 5;
+var jwtEnd = document.cookie.indexOf(';', jwtStart);
+if (jwtEnd === -1) jwtEnd = document.cookie.length;
+var jwt =  document.cookie.substring(jwtStart, jwtEnd);
 fetch(`//urplus.herokuapp.com/api/v1/remarks/all/?project_name=${projectName}`, {
   headers: new Headers({ Authorization: jwt })
 })
