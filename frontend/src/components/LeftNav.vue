@@ -15,9 +15,6 @@
           <a class="nav-link" href="#introduction">Introduction</a>
         </li>
         <li class="nav-item remarks">
-          <a class="nav-link" href="#installation">Installation</a>
-        </li>
-        <li class="nav-item remarks">
           <a class="nav-link" href="#tutorial">Tutorial</a>
         </li>
         <li class="nav-item remarks">

@@ -30,23 +30,6 @@
         covering all of the essentials.
       </p>
 
-      <h2 id="installation">Installation</h2>
-      <hr>
-      <p>
-        To install the Remark Storage app, simply click the button below to install the Chrome Extension.
-      </p>
-      <button
-        class="btn urplus-btn-primary"
-        onclick="chrome.webstore.install()"
-      >
-        Install Chrome Extension
-      </button>
-      <br><br>
-      <p>
-        Of course, this means you will have to use Google Chrome when completing reviews.
-        Other browsers are currently not supported.
-      </p>
-
       <h2 id="tutorial">Tutorial</h2>
       <hr>
       <h4><strong>Naming conventions</strong></h4>
