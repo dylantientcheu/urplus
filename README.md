@@ -8,13 +8,13 @@ Remember that all of you have write access to this repo, so if you'd like to mak
 
 **Note**: You need Python 3 with [Pipenv](https://github.com/pypa/pipenv) installed globally. It's not too hard to figure out Pipenv if you're not familiar with it. `pip install pipenv` should be enough.
 
-##### Install the Chrome extension locally
+#### Install the Chrome extension locally
 
 Open `chrome://extensions` in a Chrome browser window. Click the "Load unpacked extension..." at the top left corner of the page, then navigate to the `urplus/extension` folder. Select the `dist` folder and submit.
 
-##### Set up the project backend
+#### Set up the project backend
 
-Do the following from a terminal:
+Run the following from a terminal:
 ``` bash
 # clone the repo
 git clone git@github.com:michaelhays/urplus.git
@@ -32,7 +32,7 @@ cd backend
 pipenv run python manage.py migrate
 ```
 
-Leave this running while you want to access your remarks:
+Run this whenever you want to access your remarks:
 ``` bash
 # run the Django development server
 pipenv run python manage.py runserver
