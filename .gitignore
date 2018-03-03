@@ -15,7 +15,6 @@ selenium-debug.log
 *.sln
 
 *.log
-.env
 .vscode/
 .idea/
 __pycache__/
@@ -23,5 +22,4 @@ staticfiles/
 .sass-cache/
 *.css.map
 node_modules/
-
-udacity-auth-update.sh
+*.sqlite3*
