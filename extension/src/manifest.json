@@ -30,8 +30,6 @@
     "storage",
     "tabs",
     "https://review.udacity.com/",
-    "https://urplus.herokuapp.com/",
-    "https://urplus-staging.herokuapp.com/",
     "https://localhost:8000/"
   ]
 }
