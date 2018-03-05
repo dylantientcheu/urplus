@@ -41,3 +41,19 @@ Whenever you are reviewing projects, keep this running from a terminal:
 # run the Django development server
 pipenv run python manage.py runserver_plus --cert /tmp/cert
 ```
+
+### Bulk remark loading
+
+If you have [downloaded your remarks](https://urplus.herokuapp.com/remarks#download-remarks) and would like to load these locally, there is a helper [`load_remarks` function](https://github.com/michaelhays/urplus/blob/master/backend/remarks/utils.py#L4) that you can use like so:
+
+``` bash
+# run Python shell
+pipenv run python manage.py shell
+
+# from inside Python shell
+from remarks.utils import load_remarks
+remarks = { ... }  # Paste the entire remark dictionary here
+load_remarks(remarks)
+```
+
+Do this for all of the projects that you'd like to load in bulk.
