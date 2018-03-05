@@ -32,6 +32,8 @@ pipenv run python manage.py migrate
 
 Open `chrome://extensions` in a Chrome browser window. Click the "Load unpacked extension..." button at the top left corner of the page, then navigate to the `urplus/extension` directory. Select the `dist` folder and submit.
 
+You'll need to set a Chrome flag in order for localhost to serve over HTTPS without a valid SSL certificate. Go to `chrome://flags`, search for "localhost", and set **Allow invalid certificates for resources loaded from localhost** to **Enabled**. Relaunch Chrome to make the changes take effect.
+
 #### Run the backend
 
 Whenever you are reviewing projects, keep this running from a terminal:
