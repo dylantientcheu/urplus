@@ -19,7 +19,7 @@ git clone git@github.com:michaelhays/urplus.git
 cd urplus
 
 # install Python dependencies (this creates a virtual environment for the project, which is a good thing)
-pipenv install
+pipenv install --dev
 
 # change directory
 cd backend
@@ -37,5 +37,5 @@ Open `chrome://extensions` in a Chrome browser window. Click the "Load unpacked 
 Whenever you are reviewing projects, keep this running from a terminal:
 ``` bash
 # run the Django development server
-pipenv run python manage.py runserver
+pipenv run python manage.py runserver_plus --cert /tmp/cert
 ```

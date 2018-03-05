@@ -21,3 +21,6 @@ django-cors-headers = "*"
 
 pylint = "*"
 pylint-django = "*"
+django-extensions = "*"
+werkzeug = "*"
+pyopenssl = "*"
