@@ -8,10 +8,6 @@ Remember that all of you have write access to this repo, so if you'd like to mak
 
 **Note**: You need Python 3 with [Pipenv](https://github.com/pypa/pipenv) installed globally. It's not too hard to figure out Pipenv if you're not familiar with it. `pip install pipenv` should be enough.
 
-#### Install the Chrome extension locally
-
-Open `chrome://extensions` in a Chrome browser window. Click the "Load unpacked extension..." at the top left corner of the page, then navigate to the `urplus/extension` folder. Select the `dist` folder and submit.
-
 #### Set up the project backend
 
 Run the following from a terminal:
@@ -32,7 +28,13 @@ cd backend
 pipenv run python manage.py migrate
 ```
 
-Run this whenever you want to access your remarks:
+#### Install the Chrome extension locally
+
+Open `chrome://extensions` in a Chrome browser window. Click the "Load unpacked extension..." button at the top left corner of the page, then navigate to the `urplus/extension` directory. Select the `dist` folder and submit.
+
+#### Run the backend
+
+Whenever you are reviewing projects, keep this running from a terminal:
 ``` bash
 # run the Django development server
 pipenv run python manage.py runserver
