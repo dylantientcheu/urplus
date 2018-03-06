@@ -136,7 +136,7 @@ module.exports = function (exec) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP = __webpack_require__(21);
-var createDesc = __webpack_require__(26);
+var createDesc = __webpack_require__(27);
 module.exports = __webpack_require__(2) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
@@ -8060,7 +8060,7 @@ Vue$3.nextTick(function () {
 
 /* harmony default export */ __webpack_exports__["a"] = (Vue$3);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(46), __webpack_require__(51).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(24), __webpack_require__(51).setImmediate))
 
 /***/ }),
 /* 10 */
@@ -8240,8 +8240,8 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject = __webpack_require__(5);
-var IE8_DOM_DEFINE = __webpack_require__(36);
-var toPrimitive = __webpack_require__(43);
+var IE8_DOM_DEFINE = __webpack_require__(37);
+var toPrimitive = __webpack_require__(44);
 var dP = Object.defineProperty;
 
 exports.f = __webpack_require__(2) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
@@ -8274,8 +8274,8 @@ module.exports = function (it) {
 /* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(27)('keys');
-var uid = __webpack_require__(30);
+var shared = __webpack_require__(28)('keys');
+var uid = __webpack_require__(31);
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
@@ -8285,6 +8285,33 @@ module.exports = function (key) {
 /* 24 */
 /***/ (function(module, exports) {
 
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
 // IE 8- don't enum bug keys
 module.exports = (
   'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
@@ -8292,12 +8319,12 @@ module.exports = (
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(40);
-var enumBugKeys = __webpack_require__(24);
+var $keys = __webpack_require__(41);
+var enumBugKeys = __webpack_require__(25);
 
 module.exports = Object.keys || function keys(O) {
   return $keys(O, enumBugKeys);
@@ -8305,7 +8332,7 @@ module.exports = Object.keys || function keys(O) {
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = function (bitmap, value) {
@@ -8319,7 +8346,7 @@ module.exports = function (bitmap, value) {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(0);
@@ -8331,7 +8358,7 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
@@ -8343,7 +8370,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
@@ -8354,7 +8381,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -8365,7 +8392,7 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -8462,29 +8489,29 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 32 */,
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(34), __esModule: true };
-
-/***/ }),
+/* 33 */,
 /* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(44);
-module.exports = __webpack_require__(1).Object.assign;
-
+module.exports = { "default": __webpack_require__(35), __esModule: true };
 
 /***/ }),
 /* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(45);
+module.exports = __webpack_require__(1).Object.assign;
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(13);
-var toLength = __webpack_require__(28);
-var toAbsoluteIndex = __webpack_require__(42);
+var toLength = __webpack_require__(29);
+var toAbsoluteIndex = __webpack_require__(43);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -8506,7 +8533,7 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(2) && !__webpack_require__(6)(function () {
@@ -8515,17 +8542,17 @@ module.exports = !__webpack_require__(2) && !__webpack_require__(6)(function () 
 
 
 /***/ }),
-/* 37 */,
-/* 38 */
+/* 38 */,
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(25);
-var gOPS = __webpack_require__(39);
-var pIE = __webpack_require__(41);
-var toObject = __webpack_require__(29);
+var getKeys = __webpack_require__(26);
+var gOPS = __webpack_require__(40);
+var pIE = __webpack_require__(42);
+var toObject = __webpack_require__(30);
 var IObject = __webpack_require__(20);
 var $assign = Object.assign;
 
@@ -8557,19 +8584,19 @@ module.exports = !$assign || __webpack_require__(6)(function () {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var has = __webpack_require__(19);
 var toIObject = __webpack_require__(13);
-var arrayIndexOf = __webpack_require__(35)(false);
+var arrayIndexOf = __webpack_require__(36)(false);
 var IE_PROTO = __webpack_require__(23)('IE_PROTO');
 
 module.exports = function (object, names) {
@@ -8587,14 +8614,14 @@ module.exports = function (object, names) {
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(12);
@@ -8607,7 +8634,7 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -8625,17 +8652,17 @@ module.exports = function (it, S) {
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(11);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(38) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(39) });
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -8822,33 +8849,6 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
 
 
 /***/ }),
@@ -9045,13 +9045,13 @@ module.exports = g;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46), __webpack_require__(45)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(24), __webpack_require__(46)))
 
 /***/ }),
 /* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var apply = Function.prototype.apply;
+/* WEBPACK VAR INJECTION */(function(global) {var apply = Function.prototype.apply;
 
 // DOM APIs, for completeness
 
@@ -9102,9 +9102,17 @@ exports._unrefActive = exports.active = function(item) {
 
 // setimmediate attaches itself to the global object
 __webpack_require__(50);
-exports.setImmediate = setImmediate;
-exports.clearImmediate = clearImmediate;
+// On some exotic environments, it's not clear which object `setimmeidate` was
+// able to install onto.  Search each possibility in the same order as the
+// `setimmediate` library.
+exports.setImmediate = (typeof self !== "undefined" && self.setImmediate) ||
+                       (typeof global !== "undefined" && global.setImmediate) ||
+                       (this && this.setImmediate);
+exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
+                         (typeof global !== "undefined" && global.clearImmediate) ||
+                         (this && this.clearImmediate);
 
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(24)))
 
 /***/ }),
 /* 52 */,
@@ -9138,7 +9146,7 @@ exports.clearImmediate = clearImmediate;
 function injectStyle (ssrContext) {
   __webpack_require__(137)
 }
-var Component = __webpack_require__(31)(
+var Component = __webpack_require__(32)(
   /* script */
   __webpack_require__(103),
   /* template */
@@ -9204,7 +9212,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign__);
 
 //
@@ -9236,13 +9244,58 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
+/* eslint-disable */
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'app',
+  name: "app",
   data: function data() {
     return {
       activeReview: null,
-      currency: 'USD',
+      currency: "USD",
       dailyUSDIncome: 0,
       monthlyUSDIncome: 0,
       rates: {
@@ -9256,24 +9309,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.updatePopup();
     },
     runRecurring: function runRecurring() {
-      chrome.runtime.sendMessage({ func: 'runRecurring' });
+      chrome.runtime.sendMessage({ func: "runRecurring" });
       setTimeout(this.runRecurring, 10000);
     },
     updatePopup: function updatePopup() {
       var _this = this;
 
-      chrome.storage.local.get('dailyUSDIncome', function (data) {
-        if ('dailyUSDIncome' in data) {
+      chrome.storage.local.get("dailyUSDIncome", function (data) {
+        if ("dailyUSDIncome" in data) {
           _this.dailyUSDIncome = data.dailyUSDIncome;
         }
       });
-      chrome.storage.local.get('monthlyUSDIncome', function (data) {
-        if ('monthlyUSDIncome' in data) {
+      chrome.storage.local.get("monthlyUSDIncome", function (data) {
+        if ("monthlyUSDIncome" in data) {
           _this.monthlyUSDIncome = data.monthlyUSDIncome;
         }
       });
-      chrome.storage.local.get('activeReview', function (data) {
-        if ('activeReview' in data) {
+      chrome.storage.local.get("activeReview", function (data) {
+        if ("activeReview" in data) {
           _this.activeReview = data.activeReview;
         }
       });
@@ -9286,7 +9339,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   beforeCreate: function beforeCreate() {
     var _this2 = this;
 
-    fetch('https://api.fixer.io/latest?base=USD').then(function (response) {
+    fetch("https://api.fixer.io/latest?base=USD").then(function (response) {
       return response.json();
     }).then(function (json) {
       _this2.rates = __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_object_assign___default()({}, _this2.rates, json.rates);
@@ -9351,10 +9404,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "app"
     }
-  }, [_c('h3', {
-    staticStyle: {
-      "display": "inline-block"
+  }, [_c('div', {
+    staticClass: "income-box",
+    attrs: {
+      "id": "income-box"
     }
+  }, [_c('div', {
+    staticClass: "income-title-bar"
+  }, [_c('h3', {
+    staticClass: "box-title"
   }, [_vm._v("Income")]), _vm._v(" "), _c('select', {
     directives: [{
       name: "model",
@@ -9376,13 +9434,55 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.currency = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
       }
     }
-  }, [_c('option', [_vm._v("USD")]), _vm._v(" "), _c('option', [_vm._v("EUR")]), _vm._v(" "), _c('option', [_vm._v("JPY")]), _vm._v(" "), _c('option', [_vm._v("GBP")]), _vm._v(" "), _c('option', [_vm._v("AUD")]), _vm._v(" "), _c('option', [_vm._v("CAD")]), _vm._v(" "), _c('option', [_vm._v("INR")])]), _c('br'), _vm._v(" "), _c('span', [_c('strong', [_vm._v("Today:")]), _vm._v(" " + _vm._s(_vm.convertCurrency(_vm.dailyUSDIncome)) + " " + _vm._s(_vm.currency))]), _c('br'), _vm._v(" "), _c('span', [_c('strong', [_vm._v("This month:")]), _vm._v(" " + _vm._s(_vm.convertCurrency(_vm.monthlyUSDIncome)) + " " + _vm._s(_vm.currency))]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('h3', [_vm._v("First Active Review")]), _vm._v(" "), (_vm.activeReview) ? _c('div', [_c('span', [_c('strong', [_vm._v("Project name:")]), _vm._v(" " + _vm._s(_vm.activeReview.project.name))]), _c('br'), _vm._v(" "), _c('span', [_c('strong', [_vm._v("Submission ID:")]), _vm._v(" " + _vm._s(_vm.activeReview.id))]), _c('br'), _vm._v(" "), _c('span', [_c('strong', [_vm._v("Assigned at:")]), _vm._v(" " + _vm._s((new Date(_vm.activeReview.assigned_at)).toLocaleTimeString()))]), _c('br'), _vm._v(" "), _c('span', [_c('strong', [_vm._v("Price:")]), _vm._v(" $" + _vm._s(_vm.activeReview.price))]), _c('br'), _vm._v(" "), _c('span', [_c('a', {
+  }, [_c('option', [_vm._v("USD")]), _vm._v(" "), _c('option', [_vm._v("EUR")]), _vm._v(" "), _c('option', [_vm._v("JPY")]), _vm._v(" "), _c('option', [_vm._v("GBP")]), _vm._v(" "), _c('option', [_vm._v("AUD")]), _vm._v(" "), _c('option', [_vm._v("CAD")]), _vm._v(" "), _c('option', [_vm._v("INR")])])]), _vm._v(" "), _c('table', {
+    staticClass: "cards"
+  }, [_c('li', {
+    staticClass: "cards-item"
+  }, [_c('div', {
+    staticClass: "income-card"
+  }, [_c('div', {
+    staticClass: "card-content"
+  }, [_c('div', {
+    staticClass: "card-title"
+  }, [_vm._v("Today")]), _vm._v(" "), _c('p', {
+    staticClass: "card-text"
+  }, [_vm._v(_vm._s(_vm.convertCurrency(_vm.dailyUSDIncome)) + " " + _vm._s(_vm.currency))])])])]), _vm._v(" "), _c('li', {
+    staticClass: "cards-item"
+  }, [_c('div', {
+    staticClass: "income-card"
+  }, [_c('div', {
+    staticClass: "card-content"
+  }, [_c('div', {
+    staticClass: "card-title"
+  }, [_vm._v("This Month")]), _vm._v(" "), _c('p', {
+    staticClass: "card-text"
+  }, [_vm._v(_vm._s(_vm.convertCurrency(_vm.monthlyUSDIncome)) + " " + _vm._s(_vm.currency))])])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "reviews-box",
+    attrs: {
+      "id": "reviews-box"
+    }
+  }, [_c('h3', {
+    staticClass: "box-title"
+  }, [_vm._v("Reviews")]), _vm._v(" "), (_vm.activeReview) ? _c('div', {
+    staticClass: "active-review-box"
+  }, [_c('table', {
+    staticClass: "review-table"
+  }, [_vm._m(0), _vm._v(" "), _c('tr', {
+    staticClass: "table-row"
+  }, [_c('td', [_vm._v(" " + _vm._s(_vm.activeReview.project.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.activeReview.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s((new Date(_vm.activeReview.assigned_at)).toLocaleTimeString()))]), _vm._v(" "), _c('td', [_vm._v("$" + _vm._s(_vm.activeReview.price))])])]), _vm._v(" "), _c('span', [_c('a', {
+    staticClass: "button -regular",
     attrs: {
       "href": ("https://review.udacity.com/#!/submissions/" + (_vm.activeReview.id)),
       "target": "_blank"
     }
-  }, [_vm._v("Resume review")])])]) : _c('div', [_c('span', [_vm._v("No currently assigned reviews.")])])])
-},staticRenderFns: []}
+  }, [_vm._v("Resume review")])])]) : _c('div', [_c('span', {
+    staticClass: "text-no-review"
+  }, [_vm._v("No currently assigned reviews.")])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('tr', {
+    staticClass: "table-header"
+  }, [_c('th', [_vm._v("Name")]), _vm._v(" "), _c('th', [_vm._v("Id")]), _vm._v(" "), _c('th', [_vm._v("Time")]), _vm._v(" "), _c('th', [_vm._v("Price")])])
+}]}
 
 /***/ })
 /******/ ]);
