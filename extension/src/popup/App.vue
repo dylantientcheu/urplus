@@ -48,18 +48,11 @@
           <tr class="table-row">
             <td> {{ activeReview.project.name }}</td>
             <td>{{ activeReview.id }}</td>
-            <td>{{ (new Date(activeReview.assigned_at)).toLocaleTimeString() }}</td>
+            <td>{{ timeElapsed }}</td>
             <td>${{ activeReview.price }}</td>
           </tr>
         </table>
-        <!-- <span>
-          <strong>Project name:</strong> {{ activeReview.project.name }}</span><br>
-        <span>
-          <strong>Submission ID:</strong> {{ activeReview.id }}</span><br>
-        <span>
-          <strong>Assigned at:</strong> {{ (new Date(activeReview.assigned_at)).toLocaleTimeString() }}</span><br>
-        <span>
-          <strong>Price:</strong> ${{ activeReview.price }}</span><br>-->
+
         <span>
           <a class="button -regular" :href="`https://review.udacity.com/#!/submissions/${activeReview.id}`" target="_blank">Resume review</a>
         </span>
@@ -72,7 +65,7 @@
 </template>
 
 <script>
-/* eslint-disable */
+import moment from "moment";
 export default {
   name: "app",
   data: () => ({
@@ -84,6 +77,15 @@ export default {
       USD: 1
     }
   }),
+  computed: {
+    timeElapsed: function() {
+      return moment(
+        new Date(this.activeReview.assigned_at).toLocaleTimeString(),
+        "h:mm:ss a"
+      ).fromNow();
+    }
+  },
+
   methods: {
     load() {
       this.runRecurring();
