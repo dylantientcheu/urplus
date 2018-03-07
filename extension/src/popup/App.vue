@@ -78,6 +78,7 @@ export default {
     }
   }),
   computed: {
+    // Get the time elapsed since review assignment
     timeElapsed: function() {
       return moment(
         new Date(this.activeReview.assigned_at).toLocaleTimeString(),
@@ -136,6 +137,9 @@ export default {
 body {
   margin: 0 !important;
 }
+
+/* App Styling
+-----------------------------------------*/
 #app {
   background: rgb(242, 242, 242);
   font-size: 16px;
@@ -165,6 +169,8 @@ body {
     font-weight: 500;
   }
 
+/* Select Dropdown Element
+----------------------------------------*/
   select {
     letter-spacing: 2px;
     color: #9b56ef;
@@ -348,6 +354,8 @@ body {
       font-weight: 500;
     }
 
+/*Table Styling
+---------------------------------------*/
     td,
     th {
       padding: 10px;
