@@ -21614,6 +21614,7 @@ var Arrive = (function(window, $, undefined) {
         _this3.remarkSaveVisible = true;
         _this3.$container.find('textarea').trigger('change');
       });
+
       this.$container[0].leave('textarea', function () {
         if (_this3.$container.find('span.result-icon').length) {
           _this3.remarkAddonVisible = false;
@@ -21625,6 +21626,12 @@ var Arrive = (function(window, $, undefined) {
       this.$container.on('click', 'input:radio', function () {
         _this3.remarkSaveVisible = true;
       });
+
+      // Help add remarks to an element with previous reviews
+      if (this.$container.find('[ng-if="!!critique.prev_observation"]').length) {
+        this.remarkAddonVisible = true;
+        this.remarkSaveVisible = false;
+      }
     }
   }
 }));
