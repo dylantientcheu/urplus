@@ -56,6 +56,7 @@ export default Vue.extend({
         this.remarkSaveVisible = true;
         this.$container.find('textarea').trigger('change');
       });
+
       this.$container[0].leave('textarea', () => {
         if (this.$container.find('span.result-icon').length) {
           this.remarkAddonVisible = false;
@@ -67,6 +68,12 @@ export default Vue.extend({
       this.$container.on('click', 'input:radio', () => {
         this.remarkSaveVisible = true;
       });
+
+      // Help add remarks to an element with previous reviews
+      if (this.$container.find('[ng-if="!!critique.prev_observation"]').length) {
+        this.remarkAddonVisible = true;
+        this.remarkSaveVisible = false;
+      }
     },
   },
 });
