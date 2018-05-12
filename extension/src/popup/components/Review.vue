@@ -37,10 +37,7 @@ export default {
     ...Vuex.mapState(['activeReview']),
     // Get the time elapsed since review assignment
     timeElapsed() {
-      return moment(
-        new Date(this.activeReview.assigned_at).toLocaleTimeString(),
-        'h:mm:ss a',
-      ).fromNow();
+      return moment(new Date(this.activeReview.assigned_at)).fromNow();
     },
   },
 };

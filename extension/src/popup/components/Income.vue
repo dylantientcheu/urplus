@@ -19,6 +19,7 @@
         <div class="card-title">This Month</div>
         <p class="card-text">{{ convertCurrency(monthlyUSDIncome) }} {{ currency }}</p>
       </li>
+    </table>
   </div>
 </template>
 
