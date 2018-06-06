@@ -19,7 +19,7 @@
 Documentation can be found in the [Wiki](https://github.com/blurdylan/urplus/wiki)
 
 ## Contributing
-Got a question or an idea? Found a bug? We can talk about it on slack [![Slack Channel](https://img.shields.io/badge/-Udacity%20Mentors-blue.svg?logo=slack)](https://udacitymentors.slack.com/) for ways to offer feedback and contribute.
+Got a question or an idea? Found a bug? We can talk about it on [our Slack Channel](https://udacitymentors.slack.com/) for ways to offer feedback and contribute.
 
 For minor changes:
 
