@@ -4,12 +4,15 @@
   <hr>
 </p>
 
+<p align="center">
+  <a href="https://mentor-dashboard.udacity.com/"><img src="https://img.shields.io/badge/udacity-reviewer-blue.svg" alt="Udacity Review" /></a>
+<a href="https://github.com/blurdylan/urplus"><img src="https://img.shields.io/github/last-commit/blurdylan/urplus.svg" alt="GitHub last commit" /></a>
+<a href="github.com/blurdylan/urplus"><img src="https://img.shields.io/github/contributors/blurdylan/urplus.svg" alt="GitHub contributors" /></a>
+<a href="https://github.com/blurdylan/urplus"><img src="https://img.shields.io/github/license/blurdylan/urplus.svg" alt="license" /></a>
+<a href="https://gitter.im/urplus-tools/"><img src="https://img.shields.io/badge/Chat-On--Gitter-blue.svg?logo=gitter" alt="Slack Channel" /></a>
+</p>
 
-[![Udacity Review](https://img.shields.io/badge/udacity-reviewer-blue.svg)](https://mentor-dashboard.udacity.com/)
-[![GitHub last commit](https://img.shields.io/github/last-commit/blurdylan/urplus.svg)](https://github.com/blurdylan/urplus)  
-[![GitHub contributors](https://img.shields.io/github/contributors/blurdylan/urplus.svg)](github.com/blurdylan/urplus)  
-[![license](https://img.shields.io/github/license/blurdylan/urplus.svg)](https://github.com/blurdylan/urplus)
-[![Slack Channel](https://img.shields.io/badge/Chat-On--Gitter-blue.svg?logo=gitter)](https://gitter.im/urplus-tools/)
+
 
 ## Requirements
 * [Python 3](https://www.python.org/downloads/)
