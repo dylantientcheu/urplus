@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/ZYuvroM.png" alt="urplus">
+  <img src="https://i.imgur.com/l5mzmeA.png" alt="urplus">
   <b>urPlus</b> is a collection of tools to enhance the Udacity reviewer experience and productivity.
   <hr>
 </p>
