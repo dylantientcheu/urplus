@@ -1,12 +1,15 @@
-# urPlus
+<p align="center">
+  <img src="https://i.imgur.com/ZYuvroM.png" alt="urplus">
+  <b>urPlus</b> is a collection of tools to enhance the Udacity reviewer experience and productivity.
+  <hr>
+</p>
+
+
 [![Udacity Review](https://img.shields.io/badge/udacity-reviewer-blue.svg)](https://mentor-dashboard.udacity.com/)
-[![GitHub last commit](https://img.shields.io/github/last-commit/blurdylan/urplus.svg)](https://github.com/blurdylan/urplus)
-[![GitHub contributors](https://img.shields.io/github/contributors/blurdylan/urplus.svg)](github.com/blurdylan/urplus)
+[![GitHub last commit](https://img.shields.io/github/last-commit/blurdylan/urplus.svg)](https://github.com/blurdylan/urplus)  
+[![GitHub contributors](https://img.shields.io/github/contributors/blurdylan/urplus.svg)](github.com/blurdylan/urplus)  
 [![license](https://img.shields.io/github/license/blurdylan/urplus.svg)](https://github.com/blurdylan/urplus)
-[![Slack Channel](https://img.shields.io/badge/-Udacity%20Mentors-blue.svg?logo=slack)](https://udacitymentors.slack.com/)
-
-
-`urPlus` is a collection of tools to enhance the Udacity reviewer experience and productivity.
+[![Slack Channel](https://img.shields.io/badge/Chat-On--Gitter-blue.svg?logo=gitter)](https://gitter.im/urplus-tools/)
 
 ## Requirements
 * [Python 3](https://www.python.org/downloads/)
@@ -19,7 +22,7 @@
 Documentation can be found in the [Wiki](https://github.com/blurdylan/urplus/wiki)
 
 ## Contributing
-Got a question or an idea? Found a bug? We can talk about it on [our Slack Channel](https://udacitymentors.slack.com/) for ways to offer feedback and contribute.
+Got a question or an idea? Found a bug? We can talk about it on [our Gitter Channel](https://gitter.im/urplus-tools/) for ways to offer feedback and contribute.
 
 For minor changes:
 
